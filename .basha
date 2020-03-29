@@ -47,5 +47,5 @@ export GIT_MERGE_AUTOEDIT=no
 export HISTTIMEFORMAT="%h %d %H:%M:%S "
 # store each command immediately after exec (usually stored when session ends)
 PROMPT_COMMAND='history -a'
-export HISTIGNORE='cd *:ls *:ps *:history:bzlst:bzlfind:git *:gi*:exit:df *:du *:cdur:cdadp:ssh-dxc:ssh-mob'
+export HISTIGNORE='cd *:ls *:ps *:history:bzlst:bzlfind:git *:g????:exit:df *:du *:cdur:cdadp:ssh-dxc:ssh-mob'
 shopt -s cmdhist
