@@ -34,6 +34,11 @@ function tfgpu {
   fi
 }
 
+# climb up given number of dirs
+function cdn {
+        for i in $(seq 1 $1); do cd ..; done
+}
+
 
 export PATH=$PATH:$HOME/IDE/pycharm-latest/bin
 export GIT_MERGE_AUTOEDIT=no
