@@ -35,6 +35,7 @@ function tfgpu {
 }
 
 # climb up given number of dirs
+# e.g. "cdn 4" will change current dir to 4 dirs above
 function cdn {
         for i in $(seq 1 $1); do cd ..; done
 }
