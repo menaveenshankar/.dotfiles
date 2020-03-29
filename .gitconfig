@@ -4,8 +4,8 @@
 [alias]
 	fb = pull --rebase
 	d = diff
-    dh = !"git diff-index --quiet HEAD --"
-    s = stash
+	dh = !"git diff-index --quiet HEAD --"
+	s = stash
 	sp = stash pop
 	sl = stash list
 	god = log --oneline --decorate
