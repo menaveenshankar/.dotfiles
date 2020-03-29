@@ -1,7 +1,7 @@
-cp .bash_aliases ~
-cp .vimrc ~
-cp .screenrc ~
-cp .bash_me ~
+#!/usr/bin/env bash
+
+# TODO: remove brute force install, create symlinks
+cp .* ~ 2>/dev/null
 
 
 unameOut="$(uname -s)"
@@ -11,6 +11,6 @@ case "${unameOut}" in
     *)          echo "[INFO]: Supported only on Linux and Mac. For other OSes carry out the following steps manually";;
 esac
 
-printf ". ~/.bash_me\n" >> ${bashrc_file};
+printf ". ~/.basha\n" >> ${bashrc_file};
 
 echo "[INFO]: dotfiles setup complete"
