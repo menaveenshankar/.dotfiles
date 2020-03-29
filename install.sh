@@ -13,4 +13,4 @@ esac
 
 printf ". ~/.basha\n" >> ${bashrc_file};
 
-echo "[INFO]: dotfiles setup complete"
+echo -e '\e[92m[INFO]: dotfiles setup complete. Restart your terminal.\e[39m';
