@@ -1,11 +1,17 @@
+#!/usr/bin/env bash
 
+. ~/.bash_aliases
+
+# display current branch at prompt
 parse_git_branch() {
         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+# display time, user, machine name, git branch at prompt
 export PS1="[\$(date +%k:%M)] \u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 # to add date use \D{%F %T} as prefix for PS1
 
+# function to display popup message
 function infomsg {
     zenity --info --text="$1"
 }
@@ -18,10 +24,23 @@ function bzlfind {
     bzlst "$1" | grep "$2"
 }
 
+# if tensorflow is using gpu
+function tfgpu {
+  isgpu=$(python -c 'import tensorflow as tf; sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))' 2>/dev/null | grep -c -i gpu)
+  if [ ${isgpu} -gt 0 ]; then
+    echo -e '\e[92mYuhoo, TF is using GPU!\e[39m'; 
+  else 
+    echo -e '\e[91m(W)TF is not using GPU!!!\e[39m';
+  fi
+}
+
+
+export PATH=$PATH:$HOME/IDE/pycharm-latest/bin
+export GIT_MERGE_AUTOEDIT=no
+
 ## HIST file opts
 export HISTTIMEFORMAT="%h %d %H:%M:%S "
 # store each command immediately after exec (usually stored when session ends)
 PROMPT_COMMAND='history -a'
-export HISTIGNORE='ls:ps:history:bzlst:bzlfind:git:exit:df:du"
+export HISTIGNORE='cd *:ls *:ps *:history:bzlst:bzlfind:git *:gi*:exit:df *:du *:cdur:cdadp:ssh-dxc:ssh-mob'
 shopt -s cmdhist
-
