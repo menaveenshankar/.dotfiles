@@ -5,7 +5,7 @@
 	fb = pull --rebase
 	d = diff
     dh = !"git diff-index --quiet HEAD --"
-    st = stash
+    s = stash
 	sp = stash pop
 	sl = stash list
 	god = log --oneline --decorate
