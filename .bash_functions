@@ -27,3 +27,10 @@ function tfgpu {
     echo -e '\e[91m(W)TF is not using GPU!!!\e[39m';
   fi
 }
+
+# climb up given number of dirs
+# e.g. "cdn 4" will change current dir to 4 dirs above
+function cdn {
+        for i in $(seq 1 $1); do cd ..; done
+}
+
