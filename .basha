@@ -1,46 +1,12 @@
 #!/usr/bin/env bash
 
+. ~/.bash_functions
 . ~/.bash_aliases
-
-# display current branch at prompt
-parse_git_branch() {
-        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
 
 # display time, user, machine name, git branch at prompt
 PROMPT_DIRTRIM=3
-export PS1="[\$(date +%k:%M)] \u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="[\$(date +%k:%M)] \u@\h \[\033[32m\]\w\[\033[33m\] (\$(parse_git_branch))\[\033[00m\] $ "
 # to add date use \D{%F %T} as prefix for PS1
-
-# function to display popup message
-function infomsg {
-    zenity --info --text="$1"
-}
-
-function donemsg {
-    infomsg "done"
-}
-
-function bzlfind {
-    bzlst "$1" | grep "$2"
-}
-
-# if tensorflow is using gpu
-function tfgpu {
-  isgpu=$(python -c 'import tensorflow as tf; sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))' 2>/dev/null | grep -c -i gpu)
-  if [ ${isgpu} -gt 0 ]; then
-    echo -e '\e[92mYuhoo, TF is using GPU!\e[39m'; 
-  else 
-    echo -e '\e[91m(W)TF is not using GPU!!!\e[39m';
-  fi
-}
-
-# climb up given number of dirs
-# e.g. "cdn 4" will change current dir to 4 dirs above
-function cdn {
-        for i in $(seq 1 $1); do cd ..; done
-}
-
 
 export PATH=$PATH:$HOME/IDE/pycharm-latest/bin
 export GIT_MERGE_AUTOEDIT=no
