@@ -34,7 +34,7 @@
 	meta = yellow bold
 	frag = magenta bold # line info
 	old = red # deletions
-	new = green # additions
+	new = green
 
 [color "status"]
 	added = green
@@ -55,9 +55,6 @@
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
-
-[hub]
-	host = cc-github.bmwgroup.net
 
 [remote "origin"]
 	prune = true
