@@ -8,7 +8,7 @@
 	s = stash
 	sp = stash pop
 	sl = stash list
-	god = log --oneline --decorate
+	ld = log --oneline --decorate
 	ca = commit --amend
 	can = commit --amend --no-edit
 	cm = checkout master
