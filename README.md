@@ -1,7 +1,7 @@
 # dotfiles
 This repo contains my dotfiles config. Clone in your home directory to keep all dotfiles at one place, i.e.,
 ```
-cd; git clone https://github.com/menaveenshankar/.dotfiles.git
+cd; git clone https://github.com/menaveenshankar/.files.git
 ```
 
 ## Setup
