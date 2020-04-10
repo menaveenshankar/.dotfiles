@@ -1,0 +1,11 @@
+# python
+*.pyc
+__pycache__/
+
+# mac
+.DS_Store
+
+# temp files
+*~
+*.swp
+*.swo
