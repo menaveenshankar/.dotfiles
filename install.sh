@@ -11,6 +11,9 @@ case "${unameOut}" in
     *)          echo "[INFO]: Supported only on Linux and Mac. For other OSes carry out the following steps manually";;
 esac
 
+# source .basha in bashrc
 printf ". ~/.basha\n" >> ${bashrc_file};
+# global gitignore
+git config --global core.excludesFile ~/.gitignore
 
 echo -e '\e[92m[INFO]: dotfiles setup complete. Restart your terminal.\e[39m';
