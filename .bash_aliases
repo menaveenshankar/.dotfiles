@@ -43,3 +43,6 @@ alias gd="git diff"
 alias gdh="git dh"
 alias gdm="git dm"
 alias gcb="git cb"
+
+# docker
+alias drc="docker rm $(docker ps -q -f status=exited)"
