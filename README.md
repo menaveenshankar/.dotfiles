@@ -12,3 +12,6 @@ Back up your dotfiles if need be, then run ```install.sh```.
 I am a big fan of *Bourne* movies! Get the Bourne-bash pun? :smile:
 * ```.basha``` refers to ```.bashrc``` **a**ddons, but is also a pun on the iconic (Indian) cult movie character *Basha*! :star2:
 
+## References
+* https://github.com/mathiasbynens/dotfiles
+* https://github.com/storborg/dotfiles
